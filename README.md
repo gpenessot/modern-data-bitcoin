@@ -97,3 +97,7 @@ MIT
 ## 🤝 Contribution
 
 Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request.
+
+## ✍️ Auteur
+
+Créé avec ❤️ par [Gaël Penessot](https://www.linkedin.com/in/gael-penessot), auteur de [Business Intelligence with Python](https://amzn.to/42jjs1o)
