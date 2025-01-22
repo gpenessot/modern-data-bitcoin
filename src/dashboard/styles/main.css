@@ -1,0 +1,235 @@
+/* src/dashboard/styles/main.css */
+
+/* Import de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* Variables CSS pour la cohérence des couleurs et des thèmes */
+:root {
+    /* Palette de couleurs */
+    --primary-color: #2D3748;
+    --secondary-color: #4A5568;
+    --accent-color: #3182CE;
+    --success-color: #38A169;
+    --warning-color: #D69E2E;
+    --danger-color: #E53E3E;
+    
+    /* Couleurs de fond */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F7FAFC;
+    --bg-chart: #FFFFFF;
+    
+    /* Texte */
+    --text-primary: #1A202C;
+    --text-secondary: #4A5568;
+    --text-muted: #718096;
+    
+    /* Bordures */
+    --border-color: #E2E8F0;
+    --border-radius: 8px;
+    
+    /* Ombres */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles de base */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+/* En-tête du dashboard */
+.panel-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Value boxes (KPIs) */
+.value-box {
+    border: none !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-sm) !important;
+    padding: 1.5rem !important;
+    transition: all 0.2s ease !important;
+    color: white !important;
+}
+
+.value-box:hover {
+    box-shadow: var(--shadow-md) !important;
+    transform: translateY(-2px) !important;
+}
+
+.value-box-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+}
+
+.value-box-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+/* Styles spécifiques pour les value boxes */
+.value-box-price {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+}
+
+.value-box-change {
+    background: linear-gradient(135deg, var(--accent-color), #2B6CB0) !important;
+}
+
+.value-box-volume {
+    background: linear-gradient(135deg, #4A5568, #2D3748) !important;
+}
+
+.value-box-rsi {
+    background: linear-gradient(135deg, #2C5282, #2A4365) !important;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--bg-primary);
+    border-right: 1px solid var(--border-color);
+    padding: 1.5rem;
+}
+
+/* Configuration des cartes */
+.card {
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    border: none !important;
+    margin-bottom: 1rem;
+}
+
+.card-header {
+    background-color: transparent !important;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+}
+
+/* Onglets */
+.nav-tabs {
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 1rem;
+}
+
+.nav-tabs .nav-link {
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--accent-color);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+/* Graphiques */
+.plot-container {
+    background-color: var(--bg-chart);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+/* Inputs */
+select, input[type="text"], input[type="number"] {
+    font-family: 'Inter', sans-serif;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+    width: 100%;
+    transition: all 0.2s ease;
+    margin-bottom: 0.5rem;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2);
+}
+
+/* Checkboxes personnalisés */
+.form-check {
+    padding-left: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.form-check-input {
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.25rem;
+    margin-left: -1.75rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.form-check-input:checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.form-check-label {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Code et valeurs numériques */
+.code, .mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .value-box {
+        margin-bottom: 1rem;
+    }
+    
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+    
+    .card {
+        margin: 0.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.value-box, .plot-container, .card {
+    animation: fadeIn 0.3s ease;
+}
