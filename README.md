@@ -40,9 +40,10 @@ source .venv/bin/activate  # Linux/Mac
 .venv\Scripts\activate     # Windows
 ```
 
-3. Installer les dépendances
+3. Installer les dépendances via le pyproject.toml avec le gestionnaire de paquets [uv]
 ```bash
-pip install -r requirements.txt
+pip install uv
+uv sync
 ```
 
 4. Créer un fichier .env à la racine du projet
